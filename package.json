@@ -1,0 +1,101 @@
+{
+  "name": "codefetch-vscode",
+  "displayName": "Codefetch: Markdown for LLMs",
+  "description": "Quickly generate codebase markdown with line numbers and prompts, powered by codefetch.",
+  "version": "1.0.0",
+  "publisher": "stalinkay",
+  "engines": {
+    "vscode": "^1.70.0",
+    "node": ">=10"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:codefetch.runBasic",
+    "onCommand:codefetch.runWithExtensions",
+    "onCommand:codefetch.runPrompt",
+    "onCommand:codefetch.configure"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
+    "posttest": "npm run format",
+    "prepare": "husky && husky install",
+    "test:jest": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "pretest": "npm run lint && tsc --noEmit",
+    "test": "npm run test:jest --",
+    "lint": "eslint . --cache --fix --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.10",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-electron": "2.4.1",
+    "@vscode/vsce": "3.2.1",
+    "gitmoji-changelog": "^2.3.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.4.2",
+    "mrm": "2.6.2",
+    "mrm-task-lint-staged": "7.1.22",
+    "mrm-task-prettier": "5.1.22",
+    "mrm-task-semantic-release": "6.1.22",
+    "prettier": "3.4.2",
+    "semantic-release-gitmoji": "^1.6.8",
+    "typescript": "^5.7.3"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "codefetch.runBasic",
+        "title": "Codefetch: Basic Usage"
+      },
+      {
+        "command": "codefetch.runWithExtensions",
+        "title": "Codefetch: Filter by File Extensions"
+      },
+      {
+        "command": "codefetch.runPrompt",
+        "title": "Codefetch: Use Prompt"
+      },
+      {
+        "command": "codefetch.configure",
+        "title": "Codefetch: Configure & Show Options"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stalinkay/codefetch-vscode"
+  },
+  "keywords": [
+    "codefetch",
+    "markdown",
+    "AI",
+    "LLM"
+  ],
+  "license": "MIT",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/lib/"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  }
+}

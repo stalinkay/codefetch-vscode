@@ -1,0 +1,12 @@
+# Don't include test files and Git data
+.git/
+.github/
+.vscode/
+*.map
+*.log
+# Exclude Mac OS ephemeral files
+.DS_Store
+# Optionally exclude images, large docs, or private data
+# (uncomment or add as needed)
+# docs/*
+# scripts/*
