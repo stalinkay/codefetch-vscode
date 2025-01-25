@@ -44,6 +44,7 @@
     "mrm-task-prettier": "5.1.22",
     "mrm-task-semantic-release": "6.1.22",
     "prettier": "3.4.2",
+    "semantic-release": "24.2.1",
     "semantic-release-gitmoji": "^1.6.8",
     "typescript": "^5.7.3",
     "typescript-eslint": "8.21.0"

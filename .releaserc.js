@@ -104,5 +104,11 @@ export default {
     ],
     "@semantic-release/github",
     "@semantic-release/npm",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "node update-gitmoji-changelog-version.js"
+      }
+    ],
   ],
 };
