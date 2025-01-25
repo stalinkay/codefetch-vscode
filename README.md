@@ -29,9 +29,7 @@
 
 ## About ACHIEVE with Stalin Kay
 
-For **expert online business insights, AI trends, and actionable strategies**, visit:
-[ACHIEVE with Stalin Kay](https://achieve.stalinkay.com)
-Or follow on X/Twitter: [@stalinkay](https://x.com/stalinkay).
+For **expert online business insights, AI trends, and actionable strategies**, visit: [ACHIEVE with Stalin Kay](https://achieve.stalinkay.com) Or follow on X/Twitter: [@stalinkay](https://x.com/stalinkay).
 
 ## Requirements
 

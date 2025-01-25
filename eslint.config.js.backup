@@ -1,0 +1,26 @@
+const typescriptEslintPlugin = require("@typescript-eslint/eslint-plugin");
+
+module.exports = {
+  ignores: [
+    "node_modules/",
+    "out/",
+  ],
+  files: ["src/**/*.ts"],
+  languageOptions: {
+    parser: "@typescript-eslint/parser",
+	parserOptions: {
+		project: "./tsconfig.json",
+	  }
+  },
+  plugins: {
+    "@typescript-eslint/eslint-plugin": typescriptEslintPlugin,
+  },
+  extends: [
+    "eslint:recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+  ],
+  rules: {
+    "require-yield": "off"
+  },
+};

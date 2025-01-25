@@ -1,5 +1,5 @@
 {
-  "useTabs": true,
+  "useTabs": false,
   "overrides": [
     {
       "files": "*.md",
@@ -12,7 +12,7 @@
       }
     },
     {
-      "files": "*.{json,babelrc,eslintrc,remarkrc,prettierrc}",
+      "files": "*.{js,json,babelrc,eslintrc,mjs,remarkrc,prettierrc}",
       "options": {
         "useTabs": false
       }

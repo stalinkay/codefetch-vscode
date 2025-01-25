@@ -5,41 +5,38 @@
   "version": "1.0.0",
   "publisher": "stalinkay",
   "engines": {
-    "vscode": "^1.70.0",
+    "vscode": "^1.96.0",
     "node": ">=10"
   },
   "categories": [
     "Other",
     "Programming Languages"
   ],
-  "activationEvents": [
-    "onCommand:codefetch.runBasic",
-    "onCommand:codefetch.runWithExtensions",
-    "onCommand:codefetch.runPrompt",
-    "onCommand:codefetch.configure"
-  ],
   "main": "./out/extension.js",
   "scripts": {
-    "compile": "tsc -p ./",
-    "watch": "tsc -w -p ./",
-    "package": "vsce package",
-    "publish": "vsce publish",
-    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
-    "posttest": "npm run format",
+    "compile": "pnpm exec tsc -p ./",
+    "watch": "pnpm exec tsc -w -p ./",
+    "package": "pnpm exec vsce package",
+    "publish": "pnpm exec vsce publish",
+    "format": "pnpm exec prettier --loglevel warn --write \"**/*.{js,ts,tsx,css,md,mjs}\"",
+    "posttest": "pnpm run format",
     "prepare": "husky && husky install",
     "test:jest": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "pretest": "npm run lint && tsc --noEmit",
-    "test": "npm run test:jest --",
-    "lint": "eslint . --cache --fix --ext .ts,.tsx"
+    "pretest": "pnpm run lint && pnpm exec tsc --noEmit",
+    "test": "pnpm run test:jest --",
+    "lint": "pnpm exec eslint . --cache --fix"
   },
   "devDependencies": {
-    "@types/node": "^22.10.10",
+    "@eslint/js": "9.19.0",
+    "@types/node": "22.10.10",
     "@types/vscode": "^1.96.0",
     "@vscode/test-electron": "2.4.1",
     "@vscode/vsce": "3.2.1",
+    "eslint": "9.19.0",
     "gitmoji-changelog": "^2.3.0",
+    "globals": "15.14.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.2",
     "mrm": "2.6.2",
@@ -48,7 +45,8 @@
     "mrm-task-semantic-release": "6.1.22",
     "prettier": "3.4.2",
     "semantic-release-gitmoji": "^1.6.8",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "8.21.0"
   },
   "contributes": {
     "commands": [
