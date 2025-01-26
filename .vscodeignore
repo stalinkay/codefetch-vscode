@@ -10,3 +10,23 @@
 # (uncomment or add as needed)
 # docs/*
 # scripts/*
+"/
+node_modules/
+src/
+.husky/
+
+.editorconfig
+.eslintcache
+.eslintrc.js
+.gitignore
+.gitmoji-changelogrc
+.lintstagedrc
+.npmignore
+.prettierrc
+.releaserc.js
+.vscodeignore
+eslint.config.js.backup
+eslint.config.mjs
+pnpm-lock.yaml
+tsconfig.json
+update-gitmoji-changelog-version.js

@@ -3,6 +3,10 @@
 import dateFormat from "dateformat";
 import { readFile } from "fs/promises";
 import path from "path";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Given a `const` variable `TEMPLATE_DIR` which points to "<semantic-release-gitmoji>/lib/assets/templates"
 
@@ -108,6 +112,12 @@ export default {
       "@semantic-release/exec",
       {
         "prepareCmd": "node update-gitmoji-changelog-version.js"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "publishCmd": "node publish-to-azure-devops.js"
       }
     ],
   ],

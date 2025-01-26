@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "codefetch-vscode",
   "displayName": "Codefetch: Markdown for LLMs",
   "description": "Quickly generate codebase markdown with line numbers and prompts, powered by codefetch.",
@@ -16,8 +17,8 @@
   "scripts": {
     "compile": "pnpm exec tsc -p ./",
     "watch": "pnpm exec tsc -w -p ./",
-    "package": "pnpm exec vsce package",
-    "publish": "pnpm exec vsce publish",
+    "package": "pnpm exec vsce package --no-dependencies",
+    "publish": "pnpm exec vsce publish --no-dependencies",
     "format": "pnpm exec prettier --loglevel warn --write \"**/*.{js,ts,tsx,css,md,mjs}\"",
     "posttest": "pnpm run format",
     "prepare": "husky && husky install",
@@ -26,14 +27,18 @@
     "test:coverage": "jest --coverage",
     "pretest": "pnpm run lint && pnpm exec tsc --noEmit",
     "test": "pnpm run test:jest --",
-    "lint": "pnpm exec eslint . --cache --fix"
+    "lint": "pnpm exec eslint . --cache --fix",
+    "vscode:prepublish": "pnpm run esbuild-base",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify"
   },
   "devDependencies": {
     "@eslint/js": "9.19.0",
+    "@semantic-release/exec": "6.0.3",
     "@types/node": "22.10.10",
     "@types/vscode": "^1.96.0",
     "@vscode/test-electron": "2.4.1",
     "@vscode/vsce": "3.2.1",
+    "dateformat": "5.0.3",
     "eslint": "9.19.0",
     "gitmoji-changelog": "^2.3.0",
     "globals": "15.14.0",
